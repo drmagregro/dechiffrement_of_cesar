@@ -11,3 +11,6 @@ message_chiffre = "ndbdn"
 for decalage in range(1, 26):
     message_dechiffre = dechiffre_cesar(message_chiffre, decalage)
     print(f"Décalage {decalage} → {message_dechiffre}")
+
+
+    
