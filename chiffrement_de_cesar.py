@@ -1,16 +1,20 @@
-def chiffre_cesar(mot, decalage):
-    return "".join([chr((ord(char) - 97 + decalage) % 26 + 97) for char in mot])
+import string
 
-def dechiffre_cesar(mot, decalage):
-    return "".join([chr((ord(char) - 97 - decalage) % 26 + 97) for char in mot])
+# def cesar_cipher(text, key):
+#     crypted_text = []
+#     for char in text:
+#         crypted_text += chr((ord(char) + key) % 1_114_112)
+#     return crypted_text
 
-
-message_chiffre = "ndbdn"
-
-
-for decalage in range(1, 26):
-    message_dechiffre = dechiffre_cesar(message_chiffre, decalage)
-    print(f"Décalage {decalage} → {message_dechiffre}")
+# print(cesar_cipher("chocolat",53120000000))
 
 
-    
+def cesar_cipher(text, key):
+    list_of_crypted_chars = []
+
+    for char in text:
+        list_of_crypted_chars.append(chr((ord(char) + key) % 1_114_112))
+
+
+
+

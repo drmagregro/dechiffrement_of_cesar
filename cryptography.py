@@ -30,6 +30,14 @@ def vigenere_cipher(text, password):
 		current_key = list_of_keys[index % len(list_of_keys)]
 		crypted_text.append(chr((ord(char) + current_key)))
 	return "".join(crypted_text)
+
+def vigenere_uncipher(crypted_text, password):
+    list_of_keys = [ord(char) for char in password]
+    uncrypted_text = []
+    for index, char in enumerate(crypted_text):
+        current_key = list_of_keys[index % len(list_of_keys)]
+        uncrypted_text.append(chr((ord(char) - current_key)))
+    return "".join(uncrypted_text)
 		
 
 
